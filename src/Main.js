@@ -9,27 +9,15 @@ function Main({products}){
         allProducts[i]=product
         }
     console.log(allProducts)
-    let container=document.querySelector("product")
-    const productPage= allProducts.map((product)=>{
-        let div = document.createElement("div");
-        div.innerHTML = `
-        <h2>${product.name}</h2>
-        <p>${product.description}</p>
-        <p>${product.price}</p>
-        `
-        return div
-        
+    const Form=allProducts.map((product)=>{
+        let div=
+        <ul>
+        <li>${product.name}</li>
+        <li>${product.description}</li>
+        <li>${product.price}</li>
+        </ul>
+    return div
     })
-    container.insertAdjacentHTML("beforeend", productPage);
-
-    
-    return(
-
-    
-        <>
-        <div id="product"></div>
-        <p>Hi</p>
-        </>
-    )
+    return Form
 }
 export default Main

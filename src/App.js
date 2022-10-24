@@ -22,11 +22,13 @@ function App() {
   }
   useEffect(()=>{
     getProducts()
-  },[])
+  },[])//removed brackets[].. infinite useEffect!
   console.log(products)
   return (
     <>
-    <Main products={products}/>
+    <h1>hi</h1>
+    <Main id="product" products={products}/>
+
     </>
   );
 }
