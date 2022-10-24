@@ -12,9 +12,10 @@ function Main({products}){
     const Form=allProducts.map((product)=>{
         let div=
         <ul>
-        <li>${product.name}</li>
-        <li>${product.description}</li>
-        <li>${product.price}</li>
+        <li>{product.name}</li>
+        <li>{product.description}</li>
+        <li>{product.price}</li>
+        <li><img width="100px" src={product.image} alt={product.description}/></li>
         </ul>
     return div
     })
