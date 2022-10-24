@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Main from './Main';
+import NavBar from './Navbar';
 
 function App() {
+  //fetch product list
   const [products,setProducts]=useState([]);
   const getProducts=()=>{
     fetch('products.json'
@@ -22,12 +24,35 @@ function App() {
   }
   useEffect(()=>{
     getProducts()
-  },[])//removed brackets[].. infinite useEffect!
-  console.log(products)
+  },[])
+  //fetch currency list
+  const [currencys,setCurrencys]=useState([]);
+  const getCurrencys=()=>{
+    fetch('currency.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        return response.json();
+      })
+      .then(function(myJson) {
+        setCurrencys(myJson)
+      });
+  }
+  useEffect(()=>{
+    getCurrencys()
+  },[])
   return (
     <>
-    <h1>hi</h1>
-    <Main id="product" products={products}/>
+    <NavBar
+      currencys={currencys}/>
+    <Main 
+      products={products}
+      currencys={currencys}/>
 
     </>
   );
