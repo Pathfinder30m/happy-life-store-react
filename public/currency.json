@@ -1,0 +1,17 @@
+{"currency":{
+    "kiss":[
+        "Kiss",
+        "1",
+        "../data/kiss.png"
+    ],
+    "hug":[
+        "Hug",
+        "0.5",
+        "../data/hug.jpg"
+    ],
+    "smile":[
+        "Smile",
+        "0.25",
+        "../data/smile.jpg"
+    ]
+}}
